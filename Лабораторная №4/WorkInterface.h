@@ -55,3 +55,12 @@ public:
     }
 };
 
+// абстрактный класс функции работников
+class WorkInterface {
+public:
+    ProjectManagement* management;
+    Testing* testing;
+    // делегируем выполнение операции классам поведения :
+    void performManage() { management->manageProject(); }
+    void performTesting() { testing->spendTesting(); }
+};
